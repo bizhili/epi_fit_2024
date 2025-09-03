@@ -7,6 +7,18 @@ The main entry point is `run.py`, which accepts a range of configuration paramet
 
 ## Usage
 
+Before use, first create folder for logs and results:
+
+```bash
+cd project_folder
+mkdir logs
+mkdir results/AA
+mkdir results/AB
+mkdir results/BA
+mkdir results/BB
+mkdir results/infer2018
+```
+
 ```bash
 python run.py [-h] 
               [--randomGraph RANDOMGRAPH] 
