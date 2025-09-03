@@ -84,7 +84,7 @@ python run.py [-h]
 ## Example
 
 ```bash
-python run.py --randomGraph RGG --strains 4 --n 100 --epoches 10000 --device cuda:0
+python run.py --randomGraph RGG --strains 4 --n 100 --epoches 100000 --device cuda:0
 ```
 
 ---
