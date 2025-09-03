@@ -1,0 +1,96 @@
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_ER_degree_10_1_0_8_100_10.0_50000
+INFO:root:Strains: 1
+INFO:root:Using ER random graph model
+INFO:root:Num of links: 800
+INFO:root:Reverse ZERO: tensor(5.1002e-07, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(92, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:2.96786748445951
+INFO:root:[7.417075600469526]
+INFO:root:[8.57981804310741]
+INFO:root:tensor([5.3831], device='cuda:0', grad_fn=<SelectBackward0>)
+INFO:root:tensor([6.1419], device='cuda:0', grad_fn=<SelectBackward0>)
+INFO:root:spectral_similarity: tensor(0.4825)
+INFO:root:pearson_correlation: tensor(-0.0053)
+INFO:root:jaccard_similarity: tensor(0.0687)
+INFO:root:ROC_AUC: 0.49094277108433737
+INFO:root:PR_AUC: 0.16525421575303956
+INFO:root:tensor([0.7711], device='cuda:0', grad_fn=<VarBackward0>)
+INFO:root:tensor([3.9051e-06], device='cuda:0', grad_fn=<VarBackward0>)
+INFO:root:tensor([[0.0000e+00, 2.9944e-04, 5.2158e-04, 6.1374e-04, 2.2474e-04, 5.0745e-03,
+         8.1767e-04],
+        [3.1891e-04, 0.0000e+00, 5.7517e-04, 6.0868e-04, 2.4145e-04, 3.8891e-03,
+         7.0970e-04],
+        [5.7136e-04, 4.3847e-04, 0.0000e+00, 1.5525e-03, 4.8670e-04, 1.0445e-02,
+         1.6397e-03],
+        [3.7518e-04, 3.6121e-04, 4.3862e-04, 0.0000e+00, 2.2734e-04, 5.1334e-03,
+         4.5425e-05],
+        [3.6754e-04, 3.6717e-04, 5.9590e-04, 6.3267e-04, 0.0000e+00, 5.5483e-03,
+         6.2717e-04],
+        [1.1052e-03, 8.2224e-04, 1.2340e-03, 2.0217e-03, 8.8113e-04, 0.0000e+00,
+         2.7837e-05],
+        [4.0962e-04, 2.9554e-04, 3.1492e-04, 1.3271e-03, 3.3667e-04, 4.2581e-03,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0038],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0031, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0054, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0151, 0.0013, 0.0000, 0.0000],
+        [0.0051, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:numexpr.utils:Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_RGG_degree_10_4_0_8_100_10.0_10000
+INFO:root:Strains: 4
+INFO:root:Using RGG random graph model
+INFO:root:Num of links: 800
+INFO:root:Reverse ZERO: tensor(4.7754e-07, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(1, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(101, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:750.9491660378196
+INFO:root:[7.544338699637052, 7.457993180354814, 7.578291282205388, 7.581443091514427]
+INFO:root:[7.9068273143667875, 8.110838272595872, 8.44954326934656, 8.145582275343315]
+INFO:root:tensor([2.3015, 2.2790, 6.3443, 6.5972], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([ 6.1947e-01,  4.4907e-01,  4.1052e-06, -1.8073e-05], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:spectral_similarity: tensor(0.5636)
+INFO:root:pearson_correlation: tensor(0.1346)
+INFO:root:jaccard_similarity: tensor(0.0152)
+INFO:root:ROC_AUC: 0.5631362154500354
+INFO:root:PR_AUC: 0.26964939300451707
+INFO:root:tensor([5.1226, 5.7279, 5.5057, 5.8624], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([0.0469, 0.0505, 0.0525, 0.0475], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([[0.0000, 0.0474, 0.0420, 0.0449, 0.0416, 0.0436, 0.0314],
+        [0.0573, 0.0000, 0.0427, 0.0480, 0.0406, 0.0448, 0.0308],
+        [0.0482, 0.0402, 0.0000, 0.0438, 0.0382, 0.0383, 0.0282],
+        [0.0492, 0.0435, 0.0415, 0.0000, 0.0389, 0.0403, 0.0291],
+        [0.0506, 0.0402, 0.0403, 0.0434, 0.0000, 0.0385, 0.0276],
+        [0.0550, 0.0467, 0.0423, 0.0462, 0.0404, 0.0000, 0.0304],
+        [0.0512, 0.0410, 0.0402, 0.0433, 0.0374, 0.0389, 0.0000]],
+       device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0024, 0.0000, 0.0045, 0.0000, 0.0000, 0.0000],
+        [0.0023, 0.0000, 0.0000, 0.0043, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0037, 0.0000, 0.0106],
+        [0.0027, 0.0027, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0030, 0.0000, 0.0000, 0.0000, 0.0101],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0016, 0.0000, 0.0019, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:numexpr.utils:Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
