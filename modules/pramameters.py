@@ -93,8 +93,8 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         '--weightModel',
         type=str,
-        default="degree",
-        help='Setting adjacency weight model(str): degree(defult), gravity, identical'
+        default="identical",
+        help='Setting adjacency weight model(str): identical(defult), gravity, degree'
     )
     parser.add_argument(
         '--intense',
