@@ -75,7 +75,7 @@ def degree_model(Gt: torch.Tensor, P: torch.Tensor, theta: float = 4, C: float =
     weight = torch.zeros_like(Gt, device=device)
     for i in range(n):
         for j in range(n):
-            weight[i, j] = C * (Gt[i, j] * d[j]**theta) / (P[j] * torch.sum(Gt[i, :] * (d**theta)))
+            weight[i, j] = C * (Gt[i, j] * d[j]**theta) / (1e-10+P[j] * torch.sum(Gt[i, :] * (d**theta)))
     return weight
 
 def identical_model(Gt: torch.Tensor, value:float = 0.01,  device: str = "cpu") -> torch.Tensor:
