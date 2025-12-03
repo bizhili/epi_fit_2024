@@ -105,5 +105,6 @@ gitCommon.sh
 /results/infer2018/*
 /logs/*
 /log/
-
+test_multi_cities_no_att_new.ipynb
+run.ipynb
 sbatch_gpu.example
