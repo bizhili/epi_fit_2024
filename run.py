@@ -129,9 +129,9 @@ elif paras.modelLoad=="infer2018":
     myMatch= mynn.matchingB(timeHorizon+1, paras.strains, paras.n,  device= device)
     myEpi= mynn.EpisA(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 
-optimizer1 = torch.optim.Adam(myMatch.parameters(),lr=1e-4)
-optimizer2 = torch.optim.Adam({myEpi.taus},lr=1e-4)
-optimizer3 = torch.optim.Adam({myEpi.R0dTaus},lr=1e-4)
+optimizer1 = torch.optim.Adam(myMatch.parameters(),lr=3e-4)
+optimizer2 = torch.optim.Adam({myEpi.taus},lr=3e-4)
+optimizer3 = torch.optim.Adam({myEpi.R0dTaus},lr=3e-4)
 myloss= torch.nn.MSELoss(reduction='sum')
 losses= []
 if paras.modelLoad in ["infer2018", "AB", "BB"]:
@@ -175,7 +175,7 @@ if paras.modelLoad== "infer2018":
         if j%paras.evaluateEvery== 0:
             evaluateResults.append(evaluate_epoch(PreZ.detach(), evaluateMeth))
 else:
-    for j in tqdm(range(paras.epoches)):
+    for j in (range(paras.epoches)):
         optimizer1.zero_grad()
         optimizer2.zero_grad()
         optimizer3.zero_grad()
@@ -209,8 +209,8 @@ utils.log_print(printFlag,losses[-1]/timeHorizon*100)#
 #save: A, preA, losses, taus, pretaus, R0s, preR0s, [errors]
 utils.log_print(printFlag,paras.taus[0: paras.strains])
 utils.log_print(printFlag,paras.R0s[0: paras.strains])
-utils.log_print(printFlag,myEpi.taus[0])
-utils.log_print(printFlag,(myEpi.taus*myEpi.R0dTaus)[0])
+utils.log_print(printFlag,1.01+myEpi.taus[0])
+utils.log_print(printFlag,((1.01+myEpi.taus[0])*torch.abs(myEpi.R0dTaus)[0]))
 
 IMatrix= torch.eye(paras.n, device= device)
 PreA= A_mat.reverse_A_mat(PreZ-IMatrix, P)

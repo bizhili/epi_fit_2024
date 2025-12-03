@@ -80,13 +80,13 @@ class EpisA(torch.nn.Module):
         self.device= device
         self.num_heads= num_heads
         self.n= n
-        # self.taus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*6
-        self.taus= torch.rand((n, num_heads), dtype= torch.float32, device=device)*torch.rand(1).item()*30#*6, torch.rand(1).item()*30
-        print(torch.mean(self.taus))
+        self.taus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*1# initial guess
+        # self.taus= torch.rand((n, num_heads), dtype= torch.float32, device=device)*torch.rand(1).item()#*6, torch.rand(1).item()*30
+        # print(torch.mean(self.taus))
         self.taus= torch.nn.Parameter(self.taus)
 
-        # self.R0dTaus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*1
-        self.R0dTaus= torch.rand((n, num_heads), dtype= torch.float32, device=device)
+        self.R0dTaus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*1
+        # self.R0dTaus= torch.rand((n, num_heads), dtype= torch.float32, device=device)
         self.R0dTaus= torch.nn.Parameter(self.R0dTaus)
         self.mat, self.mask= self.create_temporal_mat(input_dim)
         self.myRelu= torch.nn.ReLU()

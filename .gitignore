@@ -98,4 +98,12 @@ celerybeat-schedule.db
 
 #others
 gitCommon.sh
-# /results
+/results/AA/*
+/results/AB/*
+/results/BA/*
+/results/BB/*
+/results/infer2018/*
+/logs/*
+/log/
+
+sbatch_gpu.example
