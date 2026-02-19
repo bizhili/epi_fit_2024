@@ -132,6 +132,16 @@ elif paras.modelLoad=="infer2018":
 optimizer1 = torch.optim.Adam(myMatch.parameters(),lr=3e-4)
 optimizer2 = torch.optim.Adam({myEpi.taus},lr=3e-4)
 optimizer3 = torch.optim.Adam({myEpi.R0dTaus},lr=3e-4)
+
+if paras.mode== "topology":
+    for i in range(paras.strains):
+        myEpi.taus.data[:, i]= paras.taus[i]-1.01
+        myEpi.R0dTaus.data[:, i]= paras.R0s[i]/(paras.taus[i])-1e-3
+    optimizer1 = torch.optim.Adam(myMatch.parameters(),lr=3e-4)#myMatch.parameters()
+    optimizer2 = torch.optim.Adam({myEpi.taus},lr=0)
+    optimizer3 = torch.optim.Adam({myEpi.R0dTaus},lr=0)
+
+
 myloss= torch.nn.MSELoss(reduction='sum')
 losses= []
 if paras.modelLoad in ["infer2018", "AB", "BB"]:

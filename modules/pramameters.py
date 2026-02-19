@@ -25,7 +25,7 @@ class Paras:
 
     def __init__(self):
         self.randomGraph = None
-        self.seed = None # seed used for generating topology and data
+        self.seed = None
         self.n = None
         self.strains = None
         self.epoches = None
@@ -40,11 +40,11 @@ class Paras:
         self.taus= None
         self.R0s= None
         self.modelLoad= None
-        self.epi= None
         self.dense= None
         self.identicalf= None
         self.wsProbability= None
         self.evaluateEvery= None
+        self.mode= None
 
 
 def add_arguments(parser: argparse.ArgumentParser) -> None:
@@ -63,8 +63,8 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         '--seed',
         type=int,
-        default=10,
-        help='Setting random seed(int): 10(defult)<used for generating topology and data>'
+        default=11,
+        help='Setting random seed(int): 10(defult)'
     )
     parser.add_argument(
         '--n',
@@ -94,7 +94,7 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
         '--weightModel',
         type=str,
         default="identical",
-        help='Setting adjacency weight model(str): identical(defult), gravity, degree'
+        help='Setting adjacency weight model(str): degree(defult), gravity, identical'
     )
     parser.add_argument(
         '--intense',
@@ -157,10 +157,10 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
         help='How many epoches to perform evaluate once'
     )
     parser.add_argument(
-        '--epi',
+        '--mode',
         type=str,
-        default= "H1N1",
-        help='epidemic empirical data read'
+        default= "full",
+        help='Setting training mode (string): full(defult), topology, parameter'
     )
 
 
@@ -195,8 +195,7 @@ def read_arguments(parser: argparse.ArgumentParser) -> Paras:
     paras.identicalf= args.identicalf
     paras.wsProbability= args.wsProbability
     paras.evaluateEvery= args.evaluateEvery
-    paras.epi= args.epi
-
+    paras.mode= args.mode
 
     if paras.weightModel == "gravity" and paras.randomGraph != "RGG":
         paras.weightModel = "degree"
